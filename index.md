@@ -1,7 +1,7 @@
 # LSST Camera's Ion pump current measurements
 
 ```{abstract}
-This technote describes the vacuum system of the LSST Camera, focusing on the ion pump escpecially its current measurement with respect to the vacuum pressure. The relationship between pressure and current is expected, after taking the baseline correction into account. 
+The vacuum system of the LSST Camera, focusing on the ion pump especially its current measurement with respect to the vacuum pressure, is described. The relationship between vacuum pressure and current is expected. This technote describes the baseline correction for ion pump current measurement, shows a consistent relationship of the current and pressure measurement, and compares the pressure with the ion pump using the "predicted" current. Interpretation of the comparison is also given.
 ```
 
 ## Introduction of the LSST Camera vacuum and pumps
@@ -98,7 +98,7 @@ For a shorter time period (10days), a time bin of 5min should be seleced, where 
 This notebook allows you to change the parameters of the current and pressure relation.
 
 ### Note about Hex
-Another vacuum chamber exists in the LSST Camera, which is the Hex. This Hex chamber contains the heat exchanger for the cryo circuits as well as the routes for the cold tubing. As the Hex also uses the same model of the ion pumps, the same analysis has been applied to the Hex. The table below shows the baseline correction.
+Another vacuum chamber exists in the LSST Camera, which is the Hex. Hex consits of two mostly identical chambers contains the heat exchanger for the cryo circuits as well as the routes for the PCS cold tubing, where it used be the heat exchanger for the previous cold system. As the Hex also uses the same model of the ion pumps, the same analysis has been applied to the Hex. The table below shows the baseline correction.
 
 | Pump name | baseline current  [mA] |
 |-----------|:----------------------:|
