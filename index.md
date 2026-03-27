@@ -121,7 +121,7 @@ Initially, the PCS piping was thought to be the source of the warm surface causi
 ![Correlation between HIP1 current versus C3Exit temperature](figures/HIP1vsC3Exit.png)
 
 ## Appendix
-In TimesSquare, [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook has been created. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
+In Times Square, [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook has been created. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
 
 For a shorter time period (10days), a time bin of 5min should be seleced, where as 1h for a longer time period like 365days or more so that the query doesn't exceed the limit of the EFD (200,000 entries).
 
