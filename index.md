@@ -54,7 +54,7 @@ where the parameters are:
 
 ## Result
 The I-P relationship predicts the current from the pressure measurement. A vacuum gauge (MKS 974B) is installed on the pump plate. The cold cathode reading measures the cryostat vacuum, which we compare with ion pump currents over a year. In the next figure, time series of cryostat vacuum and ion pump currents as well as the predicted current are displayed.
-![Time seriese of vacuum and currents](figures/timeseriese.png)
+![Time series of vacuum and currents](figures/timeseriese.png)
 
 the vacuum pressure trended downward with multiple pressure spikes. Some of them correspond to the events like filter dryer change after the first experience of cryo temp sensitivity issue (May 2025), loss of dynalene cooling (August 2025), Cryo circuit maintenance (October 2025), and mysterious Cryo 6 lost (Nov 2025). On January 21, 2026, the Camera experienced uncontrolled warm up due to the loss of Dynalene cooling system for an extended period of time, **and** in March 2026, the Camera's PCS was lost due to the blown fan unit.
 
@@ -92,7 +92,7 @@ Once the leak becomes significant, the inconsistency disappears. It doesn't indi
 
 ## Appendix
 ### Times Square Notebook
-In Times Square, the [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook has been available. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
+In Times Square, the [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook is now available. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
 
 For a shorter time period (10days), a time bin of 5min should be selected, whereas 1h for a longer time period like 365days or more so that the query doesn't exceed the limit of the EFD (200,000 entries).
 
