@@ -7,11 +7,11 @@ This technote describes the vacuum system of the LSST Camera, focusing on the io
 ## Introduction of the LSST Camera vacuum and pumps
 The LSST Camera has 201 4k x 4k CCDs and their readout electronics installed in a 450L vacuum cryostat. In the cryostat, there are two thermal zones: Cryo for -130C and Cold for -50C. CCDs are cooled down Cryo plate and electronics are cooled down by the Cold plate. As the Cryo plate is colder than the sublimination temperature of water vapor at the achieved pressure of $~10^{-8}$ Torr, the Cryo plate also acts as a cryo pump. 
 
-In operation period on the telescope, the vacuum pressure is mainly maintained better than $3\times 10^{-8}$ [Torr] by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
+In operation period on the telescope, the vacuum pressure is mainly maintained in the order of $10^{-8}$ [Torr] by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
 
 ![Ion pumps on the pump plate](./figures/pump-plate-install-ion-pump-ccs-labels.jpg)
 
-The pump plate also has a vacuum gauge, MKS 974B, which have triple stage of gauges (Piezo, Micro Pirani, Cold Cathode) to provide a wide range of measurements from 2 times of the atmospheric pressure down to $1e-8$ Torr.
+The pump plate also has a vacuum gauge, MKS 974B, which have triple stage of gauges (Piezo, Micro Pirani, Cold Cathode) to provide a wide range of measurements from 2 times of the atmospheric pressure down to $10^{-8}$ Torr.
 
 ## Calibration
 The ion pump applies a high voltage of 6kV to a pumping element and measures current in a nominally operating condition. The current relates to the amount of molecules in the volume, hence it becomes another probe of the vacuum, if the calibration has been made correctly. In this document we aim to understand the calibration and discuss the application of two probes of the gauge and the ion pumps.
