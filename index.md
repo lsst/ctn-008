@@ -98,7 +98,7 @@ For a shorter time period (10days), a time bin of 5min should be seleced, where 
 This notebook allows you to change the parameters of the current and pressure relation.
 
 ### Note about Hex
-The baseline correction method has been applied to the Hex measurements. The table below shows the baseline correction.
+Another vacuum chamber exists in the LSST Camera, which is the Hex. This Hex chamber contains the heat exchanger for the cryo circuits as well as the routes for the cold tubing. As the Hex also uses the same model of the ion pumps, the same analysis has been applied to the Hex. The table below shows the baseline correction.
 
 | Pump name | baseline current  [mA] |
 |-----------|:----------------------:|
