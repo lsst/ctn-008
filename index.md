@@ -1,19 +1,24 @@
 # LSST Camera's Ion pump current measurements
 
 ```{abstract}
-This technote describes the current measurements from the ion pump with respect to the vacuum pressure. What to expect and what could go wrong.
+This technote describes the vacuum system of the LSST Camera, focusing on the ion pump escpecially its current measurement with respect to the vacuum pressure. The relationship between pressure and current is expected, after taking the baseline correction into account. 
 ```
 
 ## Introduction of the LSST Camera vacuum and pumps
-The LSST Camera has 201 4k x 4k CCDs and their readout electronics installed in a 450L vacuum cryostat. In operation period on the telescope, the vacuum pressure is maintained better than $3\times 10^{-8}$ [Torr] by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
+The LSST Camera has 201 4k x 4k CCDs and their readout electronics installed in a 450L vacuum cryostat. In the cryostat, there are two thermal zones: Cryo for -130C and Cold for -50C. CCDs are cooled down Cryo plate and electronics are cooled down by the Cold plate. As the Cryo plate is colder than the sublimination temperature of water vapor at the achieved pressure of $~10^{-8}$ Torr, the Cryo plate also acts as a cryo pump. 
+
+In operation period on the telescope, the vacuum pressure is mainly maintained better than $3\times 10^{-8}$ [Torr] by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
 
 ![Ion pumps on the pump plate](./figures/pump-plate-install-ion-pump-ccs-labels.jpg)
 
+The pump plate also has a vacuum gauge, MKS 974B, which have triple stage of gauges (Piezo, Micro Pirani, Cold Cathode) to provide a wide range of measurements from 2 times of the atmospheric pressure down to $1e-8$ Torr.
+
 ## Calibration
-The ion pump applies a high voltage of 6kV and measures current in a nominally operating condition. The current relates to the amount of molecules in the volume, hence it becomes another probe of the vacuum.
+The ion pump applies a high voltage of 6kV to a pumping element and measures current in a nominally operating condition. The current relates to the amount of molecules in the volume, hence it becomes another probe of the vacuum, if the calibration has been made correctly. In this document we aim to understand the calibration and discuss the application of two probes of the gauge and the ion pumps.
 
 ### The baseline correction
-On February 12, 2026, the ion pumps were off, causing a scatter in the measured currents among the six pumps. The baseline current was attempted to be recorded as the mean of the off state over a time period.
+On February 12, 2026, the ion pumps were off, revealing a scatter in the measured currents among the six pumps. The baseline current was attempted to be recorded as the mean of the off state over a time period. At $10^{-8}$ Torr, uA matters.
+
 
 | Pump name | baseline current [mA] |
 |-----------|:----------------------:|
@@ -25,6 +30,10 @@ On February 12, 2026, the ion pumps were off, causing a scatter in the measured 
 | CIP6      | 0.023633742909582835   |
 
 The current measurements with the baseline correction provides excellent agreement of the current measurements among 6 ion pumps after the vacuum repair fix on Feb 12, 2026, as well as the very first period of the operation back in April, 2025.
+
+The [^Agilent technical note] discusses the baseline current (leakage current) in both internal and external contexts. Our application demonstrates an excellent I-P relationship, suggesting that the baseline current in our range of concern is likely due to miscalibration and is not a cause for concern.
+
+[^Agilent technical note]: https://www.agilent.com/cs/library/technicaloverviews/public/Copy%20of%20technical-overview-how-to-optimize-ion-pump-performance-by-selecting-the-correct-operating-voltage-5994-2668en-agilent.pdf
 
 ### I-P Fitting
 Agilent provides a current-pressure (I-P) diagram. The relationship appears mostly linear but curves over decades. We limit the pressure range of our ion pumps and derive an empirical linear relationship in the log-log plane. After vacuum repair and baseline correction, I-P measurements show excellent agreement among six circuits. We fitted the data using this period and measurements from all six circuits, assuming the relationship is universal. We initially guessed the tight relation and then aggressively rejected outliers to ensure the fitting is not affected. It provides reasonable fit over $10^{-8}$ to $10^{-6}$ Torr.
@@ -79,7 +88,16 @@ With good calibration, studying current differences among circuits with geometri
 
 Once the leak becomes significant, the inconsistency disappears. It doesn't indicate the presence of a leak; it only reveals gas type inhomogeneity.
 
-## Note about Hex
+
+## Appendix
+### Times Square Notebook
+In Times Square, [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook has been available. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
+
+For a shorter time period (10days), a time bin of 5min should be seleced, where as 1h for a longer time period like 365days or more so that the query doesn't exceed the limit of the EFD (200,000 entries).
+
+This notebook allows you to change the parameters of the current and pressure relation.
+
+### Note about Hex
 The baseline correction method has been applied to the Hex measurements. The table below shows the baseline correction.
 
 | Pump name | baseline current  [mA] |
@@ -97,13 +115,10 @@ HIP1's current spreads more than HIP2 and is generally high. The numbering of HI
 Initially, the PCS piping was thought to be the source of the warm surface causing outgassing. However, the PCS piping is around -50C and the temperature is well controlled. There's no reason for fluctuations. Instead, the correlation between HIP1 currents and C3Exit of cryo circuits suggests that the warm phase of the liquid component of cryo circuits, around -20C, is the source of the oscillation.
 ![Correlation between HIP1 current versus C3Exit temperature](figures/HIP1vsC3Exit.png)
 
-## Appendix
-In Times Square, [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook has been created. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
+### Note about the effective pumping speed the 
+Estimation of the effective pumping rate, $S_{\rm 6I}$, of the 6 ion pumps is 11.4 L/s. This estimate is from the best rate-of-rise measurement when there was no inconsistency in the currents and pressure and using Aaron's relative pumping speed of $S_T / S_{6I} = 2.2$, which was confirmed to be correct when we ran both systems at the same time.  The total pumping speed appears to be greatly reduced by the complexity of the system. 
 
-For a shorter time period (10days), a time bin of 5min should be seleced, where as 1h for a longer time period like 365days or more so that the query doesn't exceed the limit of the EFD (200,000 entries).
-
-This notebook allows you to change the parameters of the current and pressure relation.
-
+$1/S_{\rm eff} = 1/S_{\rm 6I} + 1/C$, where $C$ represents the conductance of the system. $C \approx 12.6$ L/s. The reason for the small conductance is likely due to placing the light baffling in front of the opening of the ion pump gauges so as to prevent any stray light from the ion pumps.
 
 ## Useful reading resouces
 
