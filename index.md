@@ -1,21 +1,18 @@
-# LSST Camera's Ion pump current measurements
-
-```{abstract}
-This technote describes the current measurements from the ion pump with respect to the vacuum pressure. What to expect and what could go wrong.
+s technote describes the current measurements from the ion pump with respect to the vacuum pressure. What to expect and what could go wrong.
 ```
 
 ## Introduction of the LSST Camera vacuum and pumps
-The LSST Camera has 201 4k x 4k CCDs and and their readout electronics installed in a 450L vacuum cryostat. In operation period on the telescope, the vacuum pressure is maintained by 6 Ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
+The LSST Camera has 201 4k x 4k CCDs and their readout electronics installed in a 450L vacuum cryostat. In operation period on the telescope, the vacuum pressure is maintained by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
 
 ![Ion pumps on the pump plate](./figures/pump-plate-install-ion-pump-ccs-labels.jpg)
 
 ## Calibration
-The ion pump applies a high voltage of 6kV and measures current in a nominally operating condition. The current relates to the amount of the molcules in the volume, hence it becomes another probe of the vacuum.
+The ion pump applies a high voltage of 6kV and measures current in a nominally operating condition. The current relates to the amount of molecules in the volume, hence it becomes another probe of the vacuum.
 
-### Recalibaration of the baseline
+### Recalibration of the baseline
 On February 12, 2026, the ion pumps were off, causing a scatter in the measured currents among the six pumps. The baseline current was attempted to be recorded as the mean of the off state over a time period.
 
-| Pump name | baseline current  [mA] |
+| Pump name | baseline current [mA] |
 |-----------|:----------------------:|
 | CIP1      | 0.010815552670488914   |
 | CIP2      | 0.005631903077559497   |
@@ -24,7 +21,7 @@ On February 12, 2026, the ion pumps were off, causing a scatter in the measured 
 | CIP5      | 0.007770356480406705   |
 | CIP6      | 0.023633742909582835   |
 
-The current measurements with the baseline correction provides excellent agreement of the current measurements among 6 ion pumps after the vacuum repair fix on Feb 12, 2026, which convinces us that the 
+The current measurements with the baseline correction provide excellent agreement of the current measurements among 6 ion pumps after the vacuum repair fix on Feb 12, 2026, which convinces us that the 
 
 ### I-P Fitting
 Agilent provides a current-pressure (I-P) diagram. The relationship appears mostly linear but curves over decades. We limit the pressure range of our ion pumps and derive an empirical linear relationship in the log-log plane. After vacuum repair and baseline correction, I-P measurements show excellent agreement among six circuits. We fitted the data using this period and measurements from all six circuits, assuming the relationship is universal. We initially guessed the tight relation and then aggressively rejected outliers to ensure the fitting is not affected. It provides reasonable fit over $10^{-8}$ to $10^{-6}$ Torr.
@@ -78,6 +75,24 @@ Applying the baseline correction from the "off" period is effective for calibrat
 With good calibration, studying current differences among circuits with geometrical knowledge offers insightful information. An immediate interpretation is gas type inhomogeneity, but geometry speculation can also suggest leak locations.
 
 Once the leak becomes significant, the inconsistency disappears. It doesn't indicate the presence of a leak; it only reveals gas type inhomogeneity.
+
+## Note about Hex
+The baseline correction method has been applied to the Hex measurements. The table below shows the baseline correction.
+
+| Pump name | baseline current  [mA] |
+|-----------|:----------------------:|
+| HIP1      | 0.004332               |
+| HIP2      | 0.003977               |
+
+Since the same model of the ion pumps have been used, the same I-P relation has been applied.
+![Vacuum and current measurement of Heat exchange](figures/hex.png)
+
+The predicted current from the vacuum pressure generally agree with the real current measurements, however there are two major points that are worth noting here. The current measurements took some time to come down to agree with the prediction if the pressure goes to high. This could also be interpreted as seeing different types of dominant outgassing component.
+
+HIP1's current spreads more than HIP2 and is generally high. The numbering of HIP1 and HIP2 is uncertain, making interpretation difficult. However, HIP1 appears to be on the Hex chamber carrying Cryo 1-4 pipings, while HIP2 carries Cryo 5-6 and the PCS Cold system piping. The gauge is on HIP1. We assume like this way based on observation
+
+Initially, the PCS piping was thought to be the source of the warm surface causing outgassing. However, the PCS piping is around -50C and the temperature is well controlled. There's no reason for fluctuations. Instead, the correlation between HIP1 currents and C3Exit of cryo circuits suggests that the warm phase of the liquid component of cryo circuits, around -20C, is the source of the oscillation.
+![Correlation between HIP1 current versus C3Exit temperature](figures/HIP1vsC3Exit.png)
 
 ## Appendix
 In TimesSquare, [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook has been created. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
