@@ -115,7 +115,7 @@ HIP1's current spreads more than HIP2 and is generally high. The numbering of HI
 Initially, the PCS piping was thought to be the source of the warm surface causing outgassing. However, the PCS piping is around -50C and the temperature is well controlled. There's no reason for fluctuations. Instead, the correlation between HIP1 currents and C3Exit of cryo circuits suggests that the warm phase of the liquid component of cryo circuits, around -20C, is the source of the oscillation.
 ![Correlation between HIP1 current versus C3Exit temperature](figures/HIP1vsC3Exit.png)
 
-### Note about the effective pumping speed the 
+### Note about the effective pumping speed 
 Estimation of the effective pumping rate, $S_{\rm 6I}$, of the 6 ion pumps is 11.4 L/s. This estimate is from the best rate-of-rise measurement when there was no inconsistency in the currents and pressure and using Aaron's relative pumping speed of $S_T / S_{6I} = 2.2$, which was confirmed to be correct when we ran both systems at the same time.  The total pumping speed appears to be greatly reduced by the complexity of the system. 
 
 $1/S_{\rm eff} = 1/S_{\rm 6I} + 1/C$, where $C$ represents the conductance of the system. $C \approx 12.6$ L/s. The reason for the small conductance is likely due to placing the light baffling in front of the opening of the ion pump gauges so as to prevent any stray light from the ion pumps.
