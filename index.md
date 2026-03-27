@@ -110,9 +110,9 @@ Since the same model of the ion pumps have been used, the same I-P relation has 
 
 The predicted current from the vacuum pressure generally agree with the real current measurements, however there are two major points that are worth noting here. The current measurements took some time to come down to agree with the prediction if the pressure goes to high. This could also be interpreted as seeing different types of dominant outgassing component.
 
-HIP1's current spreads more than HIP2 and is generally high. The numbering of HIP1 and HIP2 is uncertain, making interpretation difficult. However, HIP1 appears to be on the Hex chamber carrying Cryo 1-4 pipings, while HIP2 carries Cryo 5-6 and the PCS Cold system piping. The gauge is on HIP1. We assume like this way based on observation
+HIP1's current spreads more than HIP2 and is generally high. The numbering of HIP1 and HIP2 is uncertain, making interpretation difficult. However, HIP1 appears to be on the Hex chamber carrying Cryo 1-4 pipings, while HIP2 carries Cryo 5-6 and the PCS Cold system piping. The gauge is on the same side with HIP1. We assume like this way based on observation.
 
-Initially, the PCS piping was thought to be the source of the warm surface causing outgassing. However, the PCS piping is around -50C and the temperature is well controlled. There's no reason for fluctuations. Instead, the correlation between HIP1 currents and C3Exit of cryo circuits suggests that the warm phase of the liquid component of cryo circuits, around -20C, is the source of the oscillation.
+Initially, the PCS piping was thought to be the source of the warm surface causing outgassing. However, the PCS piping carrys liquid around -50C and the temperature is well controlled. There's no reason for fluctuations. Instead, the correlation between HIP1 currents and C3Exit of cryo circuits suggests that the warm phase of the liquid component of cryo circuits, around -20C, is the source of the oscillation.
 ![Correlation between HIP1 current versus C3Exit temperature](figures/HIP1vsC3Exit.png)
 
 ### Note about the effective pumping speed 
