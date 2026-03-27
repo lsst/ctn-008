@@ -1,4 +1,7 @@
-s technote describes the current measurements from the ion pump with respect to the vacuum pressure. What to expect and what could go wrong.
+# LSST Camera's Ion pump current measurements
+
+```{abstract}
+This technote describes the current measurements from the ion pump with respect to the vacuum pressure. What to expect and what could go wrong.
 ```
 
 ## Introduction of the LSST Camera vacuum and pumps
@@ -22,6 +25,29 @@ On February 12, 2026, the ion pumps were off, causing a scatter in the measured 
 | CIP6      | 0.023633742909582835   |
 
 The current measurements with the baseline correction provide excellent agreement of the current measurements among 6 ion pumps after the vacuum repair fix on Feb 12, 2026, which convinces us that the 
+
+
+## Introduction of the LSST Camera vacuum and pumps
+The LSST Camera has 201 4k x 4k CCDs and and their readout electronics installed in a 450L vacuum cryostat. In operation period on the telescope, the vacuum pressure is maintained by 6 Ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
+
+![Ion pumps on the pump plate](./figures/pump-plate-install-ion-pump-ccs-labels.jpg)
+
+## Calibration
+The ion pump applies a high voltage of 6kV and measures current in a nominally operating condition. The current relates to the amount of the molcules in the volume, hence it becomes another probe of the vacuum.
+
+### The baseline correction
+On February 12, 2026, the ion pumps were off, causing a scatter in the measured currents among the six pumps. The baseline current was attempted to be recorded as the mean of the off state over a time period.
+
+| Pump name | baseline current  [mA] |
+|-----------|:----------------------:|
+| CIP1      | 0.010815552670488914   |
+| CIP2      | 0.005631903077559497   |
+| CIP3      | 0.007629892204804395   |
+| CIP4      | 0.018365769469548786   |
+| CIP5      | 0.007770356480406705   |
+| CIP6      | 0.023633742909582835   |
+
+The current measurements with the baseline correction provides excellent agreement of the current measurements among 6 ion pumps after the vacuum repair fix on Feb 12, 2026, as well as the very first period of the operation back in April, 2025.
 
 ### I-P Fitting
 Agilent provides a current-pressure (I-P) diagram. The relationship appears mostly linear but curves over decades. We limit the pressure range of our ion pumps and derive an empirical linear relationship in the log-log plane. After vacuum repair and baseline correction, I-P measurements show excellent agreement among six circuits. We fitted the data using this period and measurements from all six circuits, assuming the relationship is universal. We initially guessed the tight relation and then aggressively rejected outliers to ensure the fitting is not affected. It provides reasonable fit over $10^{-8}$ to $10^{-6}$ Torr.
