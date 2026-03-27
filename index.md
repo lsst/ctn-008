@@ -5,40 +5,17 @@ This technote describes the current measurements from the ion pump with respect 
 ```
 
 ## Introduction of the LSST Camera vacuum and pumps
-The LSST Camera has 201 4k x 4k CCDs and their readout electronics installed in a 450L vacuum cryostat. In operation period on the telescope, the vacuum pressure is maintained by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
+The LSST Camera has 201 4k x 4k CCDs and their readout electronics installed in a 450L vacuum cryostat. In operation period on the telescope, the vacuum pressure is maintained better than $3\times 10^{-8}$ [Torr] by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
 
 ![Ion pumps on the pump plate](./figures/pump-plate-install-ion-pump-ccs-labels.jpg)
 
 ## Calibration
 The ion pump applies a high voltage of 6kV and measures current in a nominally operating condition. The current relates to the amount of molecules in the volume, hence it becomes another probe of the vacuum.
 
-### Recalibration of the baseline
-On February 12, 2026, the ion pumps were off, causing a scatter in the measured currents among the six pumps. The baseline current was attempted to be recorded as the mean of the off state over a time period.
-
-| Pump name | baseline current [mA] |
-|-----------|:----------------------:|
-| CIP1      | 0.010815552670488914   |
-| CIP2      | 0.005631903077559497   |
-| CIP3      | 0.007629892204804395   |
-| CIP4      | 0.018365769469548786   |
-| CIP5      | 0.007770356480406705   |
-| CIP6      | 0.023633742909582835   |
-
-The current measurements with the baseline correction provide excellent agreement of the current measurements among 6 ion pumps after the vacuum repair fix on Feb 12, 2026, which convinces us that the 
-
-
-## Introduction of the LSST Camera vacuum and pumps
-The LSST Camera has 201 4k x 4k CCDs and and their readout electronics installed in a 450L vacuum cryostat. In operation period on the telescope, the vacuum pressure is maintained by 6 Ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agient's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
-
-![Ion pumps on the pump plate](./figures/pump-plate-install-ion-pump-ccs-labels.jpg)
-
-## Calibration
-The ion pump applies a high voltage of 6kV and measures current in a nominally operating condition. The current relates to the amount of the molcules in the volume, hence it becomes another probe of the vacuum.
-
 ### The baseline correction
 On February 12, 2026, the ion pumps were off, causing a scatter in the measured currents among the six pumps. The baseline current was attempted to be recorded as the mean of the off state over a time period.
 
-| Pump name | baseline current  [mA] |
+| Pump name | baseline current [mA] |
 |-----------|:----------------------:|
 | CIP1      | 0.010815552670488914   |
 | CIP2      | 0.005631903077559497   |
