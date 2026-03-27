@@ -92,9 +92,9 @@ Once the leak becomes significant, the inconsistency disappears. It doesn't indi
 
 ## Appendix
 ### Times Square Notebook
-In Times Square, [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook has been available. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
+In Times Square, the [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook has been available. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
 
-For a shorter time period (10days), a time bin of 5min should be selected, where as 1h for a longer time period like 365days or more so that the query doesn't exceed the limit of the EFD (200,000 entries).
+For a shorter time period (10days), a time bin of 5min should be selected, whereas 1h for a longer time period like 365days or more so that the query doesn't exceed the limit of the EFD (200,000 entries).
 
 This notebook allows you to change the parameters of the current and pressure relation.
 
