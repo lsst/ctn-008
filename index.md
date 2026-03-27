@@ -54,7 +54,7 @@ where the parameters are:
 
 ## Result
 The I-P relationship predicts the current from the pressure measurement. A vacuum gauge (MKS 974B) is installed on the pump plate. The cold cathode reading measures the cryostat vacuum, which we compare with ion pump currents over a year. In the next figure, time series of cryostat vacuum and ion pump currents as well as the predicted current are displayed.
-![Time series of vacuum and currents](figures/timeseriese.png)
+![Time series of vacuum and currents](figures/timeseries.png)
 
 the vacuum pressure trended downward with multiple pressure spikes. Some of them correspond to the events like filter dryer change after the first experience of cryo temp sensitivity issue (May 2025), loss of dynalene cooling (August 2025), Cryo circuit maintenance (October 2025), and mysterious Cryo 6 lost (Nov 2025). On January 21, 2026, the Camera experienced uncontrolled warm up due to the loss of Dynalene cooling system for an extended period of time, **and** in March 2026, the Camera's PCS was lost due to the blown fan unit.
 
