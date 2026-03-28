@@ -99,7 +99,7 @@ For a shorter time period (10days), a time bin of 5min should be selected, where
 This notebook allows you to change the parameters of the current and pressure relation.
 
 ### Note about Hex
-Another vacuum chamber exists in the LSST Camera, which is the Hex. The Hex consists of two mostly identical chambers, **containing** the heat exchanger for the cryo circuits as well as the routes for the PCS cold tubing, where it used to be the heat exchanger for the previous cold system. As the Hex also uses the same model of the ion pumps, the same analysis has been applied to the Hex. The table below shows the baseline correction.
+Another vacuum chamber exists in the LSST Camera, which is the Hex. The Hex consists of two mostly identical chambers, containing the heat exchanger for the cryo circuits as well as the routes for the PCS cold tubing, where it used to be the heat exchanger for the previous cold system. As the Hex also uses the same model of the ion pumps, the same analysis has been applied to the Hex. The table below shows the baseline correction.
 
 | Pump name | baseline current  [mA] |
 |-----------|:----------------------:|
