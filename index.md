@@ -57,6 +57,7 @@ where the parameters are:
 | b     | -5.42 |
 
 ## Result
+### Camera Cryostat
 The I-P relationship predicts the current from the pressure measurement. A vacuum gauge (MKS 974B) is installed on the pump plate. The cold cathode reading measures the cryostat vacuum, which we compare with ion pump currents over a year. In the next figure, time series of cryostat vacuum and ion pump currents as well as the predicted current are displayed.
 ![Time series of vacuum and currents](figures/timeseries.png)
 
@@ -67,7 +68,7 @@ The plot shows major periods. In the beginning the current measurements are cons
 In a different projection, the I and P plane is shown in the next figure. The data points clearly follow the prediction (red) or not. During periods when current measurements exceed the prediction, two to three times higher currents have been observed. Recently, after the new behavior emerged in late March 2026, the inconsistency is subtle compared to the previous situation, but still shows 30% higher currents.
 ![currents and pressure](figures/IP.png)
 
-### Note about Hex
+### Hex chamber
 Another vacuum chamber exists in the LSST Camera, which is the Hex. The Hex consists of two mostly identical chambers, containing the heat exchanger for the cryo circuits as well as the routes for the PCS cold tubing, where it used to be the heat exchanger for the previous cold system. As the Hex also uses the same model of the ion pumps, the same analysis has been applied to the Hex. The table below shows the baseline correction.
 
 | Pump name | baseline current  [mA] |
@@ -87,10 +88,6 @@ Initially, the PCS piping was thought to be the source of the warm surface causi
 
 
 ## Implication
-The significant leak developed after January 28, 2026. The ultimate vacuum pressure with six ion pumps reached at $\approx 6\times 10^{-7}$ [Torr], with no inconsistencies in currents observed. The interpretation was that the air leak was significant, where the air leak dominates the gas composition with a single dominant species (nitrogen).
-
-
-The interpretation of the downward trending from April 2025 to January 2026 remains uncertain. The presence of a very small leak could cause inhomogenities in gas types depending on the pump location, resulting in the inconsistencies. However, the downward trend is hard to explain. Another possibility is a virtual leak which could result in the same consequence, which could explain the downward trend.
 
 How to interpret the consistency and the inconsistency between the current and pressure? A straightforward explanation involves differences in pumping speeds caused by variations in gas composition. [MKS] and [Edwards] table the gas correction factor $K$ for various gases with respect to Nitrogen for ionization vacuum gauges to relate the reading $P_{\rm read}$ to the true measurement $P_{\rm true}$ by $P_{\rm true}=P_{\rm read}/K$. Here we summarize the important gases for the cold cathode gauge.
 
@@ -123,6 +120,10 @@ This indicates that the gas composition has converged to a hydrogen-dominated st
 The presence of cryo-pumping surfaces plays a key role in this evolution.  Water vapor and CO2 are efficiently trapped at low temperatures, leading to gradual depletion of these species from the gas phase. As a result, hydrogen—continuously supplied from material outgassing—becomes dominant.
 
 This depletion process is less effective in vacuum systems without cryogenic surfaces (such as the Hex chamber),  where residual gases such as water vapor and CO-related species remain in the gas phase longer.  This difference naturally explains the observed inconsistency between systems.
+
+The interpretation of the downward trending from April 2025 to January 2026 remains uncertain. The presence of a very small leak could cause inhomogenities in gas types depending on the pump location, resulting in the inconsistencies. However, the downward trend is hard to explain. Another possibility is a virtual leak which could result in the same consequence, which could explain the downward trend.
+
+The significant leak developed after January 28, 2026. The ultimate vacuum pressure with six ion pumps reached at $\approx 6\times 10^{-7}$ [Torr], with no inconsistencies in currents observed. The interpretation was that the air leak was significant, where the air leak dominates the gas composition with a single dominant species (nitrogen).
 
 ## Conclusion
 Applying the baseline correction from the "off" period is effective for calibrating ion pump current measurements. The correction provides consistent results from $10^{-8}$ to $10^{-6}$ Torr. Higher pressures were not studied.
