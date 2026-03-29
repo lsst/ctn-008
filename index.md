@@ -12,9 +12,13 @@ During the operational period on the telescope, the vacuum pressure is mainly ma
 ![Ion pumps on the pump plate](./figures/pump-plate-install-ion-pump-ccs-labels.jpg)
 
 The pump plate also has a vacuum gauge, the MKS 974B, which has three stages of gauges (Piezo, Micro Pirani, Cold Cathode) to provide a wide range of measurements from twice atmospheric pressure down to $10^{-8}$ Torr.
+This gauge has been calibrated against N2 at the atmospheric pressure at the summit of Cerro Pachón, acknowledging that the reduced pressure is 560 Torr.
+
 
 ## Calibration
-The ion pump applies a high voltage of 6kV to a pumping element and measures current in a nominally operating condition. The current relates to the amount of molecules in the volume, hence it becomes another probe of the vacuum, if the calibration has been made correctly. In this document we aim to understand the calibration and discuss the application of two probes of the gauge and the ion pumps.
+The ion pump applies a high voltage of 6kV to a pumping element and measures current in a nominally operating condition ([NIH]). The current relates to the amount of molecules in the volume, hence it becomes another probe of the vacuum, if the calibration has been made correctly. In this document we aim to understand the calibration and discuss the application of two probes of the gauge and the ion pumps.
+
+[NIH]: https://pmc.ncbi.nlm.nih.gov/articles/PMC6513016/#S5
 
 ### The baseline correction
 On February 12, 2026, the ion pumps were turned off, revealing scatter in the measured currents among the six pumps. The baseline current was recorded as the mean of the off-state measurements over a time period. At pressures around $10^{-8}$ Torr, microampere (µA) level currents become significant.
@@ -63,41 +67,6 @@ The plot shows major periods. In the beginning the current measurements are cons
 In a different projection, the I and P plane is shown in the next figure. The data points clearly follow the prediction (red) or not. During periods when current measurements exceed the prediction, two to three times higher currents have been observed. Recently, after the new behavior emerged in late March 2026, the inconsistency is subtle compared to the previous situation, but still shows 30% higher currents.
 ![currents and pressure](figures/IP.png)
 
-## Implication
-How to interpret the consistency and the inconsistency between the current and pressure? A straightforward explanation involves differences in pumping speeds caused by variations in gas composition. [MKS] tables the gas correction factor $K$ for various gases with respect to Nitrogen for ionization vacuum gauges to relate the reading $P_{\rm read}$ to the true measurement $P_{\rm true}$ by $P_{\rm true}=P_{\rm read}/K$. Here we summarize the important gases for the cold cathode gauge.
-
-| Gas      | Symbol | Gas correction factor | 
-|----------|--------|-----------------------|
-| Air      |        | 1.00                  |
-| Hydrogen | H2     | 0.46                  |
-| Helium   | He     | 0.18                  |
-| Oxygen    | O2     | 1.01                  |
-| Nitrogen | N2     | 1.00                  |
-
-[MKS]: https://www.mks.com/n/gas-correction-factors-for-ionization-vacuum-gauges
-
-Note that these arguments do not directly apply to ion pump currents because the ion pump current depends not only on ionization probability but also on gas-dependent pumping mechanisms.
-
-The significant leak developed after January 28, 2026. The ultimate vacuum pressure with six ion pumps reached at $\approx 6\times 10^{-7} {\rm [Torr]}$, with no inconsistencies in currents observed. The interpretation was that the air leak was significant, and there were no inconsistencies in seeing different gas types.
-
-The interpretation of the downward trending from April 2025 to January 2026 remains uncertain. The presence of a very small leak could cause inhomogenities in gas types depending on the pump location, resulting in the inconsistencies. Another possibility is a virtual leak which could result in the same consequence.
-
-## Conclusion
-Applying the baseline correction from the "off" period is effective for calibrating ion pump current measurements. The correction provides consistent results from $10^{-8}$ to $10^{-6}$ Torr. Higher pressures were not studied.
-
-With good calibration, studying current differences among circuits with geometrical knowledge offers insightful information. An immediate interpretation is gas type inhomogeneity, but geometry speculation can also suggest leak locations.
-
-Once the leak becomes significant, the inconsistency disappears. It doesn't indicate the presence of a leak; it only reveals gas type inhomogeneity.
-
-
-## Appendix
-### Times Square Notebook
-In Times Square, the [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook is now available. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
-
-For a shorter time period (10days), a time bin of 5min should be selected, whereas 1h for a longer time period like 365days or more so that the query doesn't exceed the limit of the EFD (200,000 entries).
-
-This notebook allows you to change the parameters of the current and pressure relation.
-
 ### Note about Hex
 Another vacuum chamber exists in the LSST Camera, which is the Hex. The Hex consists of two mostly identical chambers, containing the heat exchanger for the cryo circuits as well as the routes for the PCS cold tubing, where it used to be the heat exchanger for the previous cold system. As the Hex also uses the same model of the ion pumps, the same analysis has been applied to the Hex. The table below shows the baseline correction.
 
@@ -115,6 +84,62 @@ HIP1's current spreads more than HIP2 and is generally high. The numbering of HI
 
 Initially, the PCS piping was thought to be the source of the warm surface causing outgassing. However, the PCS piping carries liquid around -50C and the temperature is well controlled. There's no reason for fluctuations. Instead, the correlation between HIP1 currents and C3Exit of cryo circuits suggests that the warm phase of the liquid component of cryo circuits, around -20C, is the source of the oscillation.
 ![Correlation between HIP1 current versus C3Exit temperature](figures/HIP1vsC3Exit.png)
+
+
+## Implication
+The significant leak developed after January 28, 2026. The ultimate vacuum pressure with six ion pumps reached at $\approx 6\times 10^{-7}$ [Torr], with no inconsistencies in currents observed. The interpretation was that the air leak was significant, where the air leak dominates the gas composition with a single dominant species (nitrogen).
+
+
+The interpretation of the downward trending from April 2025 to January 2026 remains uncertain. The presence of a very small leak could cause inhomogenities in gas types depending on the pump location, resulting in the inconsistencies. However, the downward trend is hard to explain. Another possibility is a virtual leak which could result in the same consequence, which could explain the downward trend.
+
+How to interpret the consistency and the inconsistency between the current and pressure? A straightforward explanation involves differences in pumping speeds caused by variations in gas composition. [MKS] and [Edwards] table the gas correction factor $K$ for various gases with respect to Nitrogen for ionization vacuum gauges to relate the reading $P_{\rm read}$ to the true measurement $P_{\rm true}$ by $P_{\rm true}=P_{\rm read}/K$. Here we summarize the important gases for the cold cathode gauge.
+
+| Gas             | Symbol | Gas correction factor | 
+|-----------------|--------|-----------------------|
+| Air             |        | 1.00                  |
+| Hydrogen        | H2     | 0.46                  |
+| Helium          | He     | 0.18                  |
+| Oxygen          | O2     | 1.01                  |
+| Nitrogen        | N2     | 1.00                  |
+| Carbon Dioxide  | CO2    | 1.05                  |
+| Carbon Monoxide | CO     | 1.42                  |
+
+[MKS]: https://www.mks.com/n/gas-correction-factors-for-ionization-vacuum-gauges
+[Edwards]: https://www.edwardsvacuum.com/content/dam/brands/edwards-vacuum/general-vacuum/gated-downloads/application-notes/3601-2064-01_Calibration-factors-for-vacuum-pressure-gauges.pdf
+
+Note that these arguments do not directly apply to ion pump currents because the ion pump current depends not only on ionization probability but also on gas-dependent pumping mechanisms.
+
+Speculation of the gas species can be made from the relationship between the ion pump current and the measured pressure. 
+Assuming a relation of $I = K P^n$ with $n ≈ 1$, the coefficient $K$ reflects the gas species through its ionization and pumping characteristics.
+
+In some major periods, the observed current is systematically higher than the predicted relation by a factor of ~2–3. 
+This can be quantitatively explained by the known sensitivity ratios:
+$K_{N2} / K_{H2} \approx 2.17$ and $K_{CO} / K_{H2} \approx 3.08$.
+Therefore, the observed deviation is consistent with a temporary dominance of heavier gases such as CO or N2 relative to hydrogen.
+
+After long-term operation, however, the system shows a stable and reproducible I–P relationship with a lower K value. 
+This indicates that the gas composition has converged to a hydrogen-dominated state, since hydrogen has the lowest effective K among common residual gases.
+
+The presence of cryo-pumping surfaces plays a key role in this evolution.  Water vapor and CO2 are efficiently trapped at low temperatures, leading to gradual depletion of these species from the gas phase. As a result, hydrogen—continuously supplied from material outgassing—becomes dominant.
+
+This depletion process is less effective in vacuum systems without cryogenic surfaces (such as the Hex chamber),  where residual gases such as water vapor and CO-related species remain in the gas phase longer.  This difference naturally explains the observed inconsistency between systems.
+
+## Conclusion
+Applying the baseline correction from the "off" period is effective for calibrating ion pump current measurements. The correction provides consistent results from $10^{-8}$ to $10^{-6}$ Torr. Higher pressures were not studied.
+
+With good calibration, studying current differences among circuits with geometrical knowledge offers insightful information. An immediate interpretation is gas type inhomogeneity, but geometry speculation can also suggest leak locations.
+
+Once the leak becomes significant, the inconsistency disappears. It doesn't indicate the presence of a leak; it only reveals gas type inhomogeneity.
+
+
+## Appendix
+### Times Square Notebook
+In Times Square, the [vacuum](https://usdf-rsp.slac.stanford.edu/times-square/github/lsst/CameraTimesSquare/operations/vacuum) notebook is now available. This notebook provides access to the historical measurement of vacuum pressure and corrected ion pump current. 
+
+For a shorter time period (10days), a time bin of 5min should be selected, whereas 1h for a longer time period like 365days or more so that the query doesn't exceed the limit of the EFD (200,000 entries).
+
+This notebook allows you to change the parameters of the current and pressure relation.
+
 
 ### Note about the effective pumping speed 
 Estimation of the effective pumping rate, $S_{\rm 6I}$, of the 6 ion pumps is 11.4 L/s. This estimate is from the best rate-of-rise measurement when there was no inconsistency in the currents and pressure and using Aaron's relative pumping speed of $S_T / S_{6I} = 2.2$, which was confirmed to be correct when we ran both systems at the same time.  The total pumping speed appears to be greatly reduced by the complexity of the system. 
