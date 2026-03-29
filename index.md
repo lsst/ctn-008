@@ -1,7 +1,7 @@
 # LSST Camera's Ion pump current measurements
 
 ```{abstract}
-This tech note describes the vacuum system of the LSST Camera, focusing on ion pump current measurements in relation to vacuum pressure. While a relationship between vacuum pressure and current is expected, this document details the baseline correction for ion pump current measurement, demonstrates consistent correlation between current and pressure readings, compares pressures with "predicted" currents from ion pumps, and provides interpretation of these comparisons.
+This technote describes the vacuum system of the LSST Camera, focusing on ion pump current measurements in relation to vacuum pressure. While a relationship between vacuum pressure and current is expected, this document details the baseline correction for ion pump current measurement, demonstrates consistent correlation between current and pressure readings, compares pressures with "predicted" currents from ion pumps, and provides interpretation of these comparisons.
 ```
 
 ## Introduction to the LSST Camera Vacuum System
