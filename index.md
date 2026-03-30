@@ -41,7 +41,7 @@ The [Agilent Technical Note] discusses baseline current (leakage current) in bot
 [Agilent technical note]: https://www.agilent.com/cs/library/technicaloverviews/public/Copy%20of%20technical-overview-how-to-optimize-ion-pump-performance-by-selecting-the-correct-operating-voltage-5994-2668en-agilent.pdf
 
 ### I-P Fitting
-Agilent provides a current-pressure (I-P) diagram. The relationship appears mostly linear but curves over decades. We limit the pressure range of our ion pumps and derive an empirical linear relationship in the log-log plane. After vacuum repair and baseline correction, I-P measurements show excellent agreement among six circuits. We fitted the data using this period and measurements from all six circuits, assuming the relationship is universal. We assumed a strong correlation between current and pressure, then systematically removed outliers to prevent them from affecting the fit quality. It provides reasonable fit over $10^{-8}$ to $10^{-6}$ Torr.
+Agilent provides a current-pressure (I-P) diagram. The relationship appears mostly linear but curves over decades. We limit the pressure range of our ion pumps and derive an empirical linear relationship in the log-log plane. After vacuum repair and baseline correction, I-P measurements show excellent agreement among six circuits as well as a cloud of data points deviate from the relationship. We fitted the data using this period and measurements from all six circuits, assuming the relationship is universal among 6 circuits. We assumed a strong correlation between current and pressure, then systematically removed outliers to prevent them from affecting the fit quality. It provides reasonable fit over $10^{-8}$ to $10^{-6}$ Torr.
 
 ![I-P relationship](figures/PIrelation.png)
 
