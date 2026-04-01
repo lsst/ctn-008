@@ -47,7 +47,7 @@ Agilent provides a current-pressure (I-P) diagram. The relationship appears most
 
 The derived fitted formula is:
 
-$ \log(I/{\rm [mA]}) = a\log(P/{\rm [Torr]}) + b$
+$ \log(P/{\rm [Torr]}) = a\log(I/{\rm [mA]}) + b$
 
 where the parameters are:
 
