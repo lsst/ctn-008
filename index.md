@@ -7,7 +7,7 @@ This technote describes the vacuum system of the LSST Camera, focusing on ion pu
 ## Introduction to the LSST Camera Vacuum System
 The LSST Camera has 201 4k x 4k CCDs and their readout electronics installed in a 450L vacuum cryostat. In the cryostat, there are two thermal zones: Cryo for -130C and Cold for -50C. The CCDs are cooled on the Cryo plate, while the readout electronics are cooled on the Cold plate. As the Cryo plate is colder than the sublimation temperature of water vapor at the achieved pressure of $~10^{-8}$ Torr, the Cryo plate also acts as a cryo pump. 
 
-During the operational period on the telescope, the vacuum pressure is mainly maintained in the order of $10^{-8}$ Torr by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agilent's VacIon Plus 20 Pump (StarCell model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
+During the operational period on the telescope, the vacuum pressure is mainly maintained in the order of $10^{-8}$ Torr by 6 ion pumps installed on the back of the camera cryostat, the pump plate. The ion pump is Agilent's VacIon Plus 20 Pump (diode model). Each ion pump provides a pumping speed of 20L/s. With six identical pumps, the total pumping speed is 120L/s.
 
 ![Ion pumps on the pump plate](./figures/pump-plate-install-ion-pump-ccs-labels.jpg)
 
